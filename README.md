@@ -14,12 +14,25 @@ git remote add -f microbit git@github.com:Microsoft/pxt-microbit.git
 # If remote already added, fetch instead
 git fetch microbit
 
-git checkout -b cs-intro microbit/master
+git checkout -b staging microbit/master
 git subtree split -P docs/courses -b docs-courses
 git checkout master
-git rm -rf en
-git commit -m "Prepare for update" en
-git subtree add -P en docs-courses
-git branch -D docs-courses  cs-intro
+git rm -rf courses/en
+git commit -m "Prepare for update" courses/en
+git subtree add -P courses/en docs-courses
+git branch -D docs-courses staging
+git push
+```
+
+Updating static images:
+
+```
+git checkout -b staging microbit/master
+git subtree split -P docs/static/courses -b static-courses
+git checkout master
+git rm -rf static/en
+git commit -m "Prepare for update" static/en
+git subtree add -P static/en static-courses
+git branch -D static-courses staging
 git push
 ```
