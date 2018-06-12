@@ -1,0 +1,3 @@
+files:
+  - source: /courses/en/**/*.md
+    translation: /courses/%two_letters_code%/**/%original_file_name%
