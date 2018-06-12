@@ -3,3 +3,6 @@
 files:
   - source: /courses/en/**/*.md
     translation: /courses/%two_letters_code%/**/%original_file_name%
+    ignore: 
+      - /courses/en/ucp-science
+      - /courses/en/ucp-science.md
